@@ -1,0 +1,7 @@
+# Using your own HDL files
+
+Use **+** beside **Sources** to import design files and testbench files. Import copies UTF-8 source text into the project. Right-click a source to rename it, change its role or move it earlier in compilation order. Include Verilog headers as design sources. Source names share one directory. Put VHDL packages before their users. Set **Design top** to the module/entity to synthesize and **Simulation top** to the testbench module/entity. Simulation runs until the requested duration, an explicit finish, or a failure. **Stop** interrupts a running tool.
+
+The synthesizer emits a generic logical netlist. Device placement, routing, timing closure, encrypted IP, FPGA programming and Vivado project import are outside this build. A run accepts Verilog/SystemVerilog together or VHDL separately in the `work` library. SystemVerilog coverage follows the Yosys and Icarus front ends. Use VHDL-2008 for VHDL sources. Project snapshots include HDL files and headers. Testbenches that read external data need an accessible path to those files.
+
+Each run retains a source snapshot, tool logs and generated output under `~/Library/Application Support/RTL Bench/Runs/`. Synthesis writes `netlist.v`. Simulation writes `waves.vcd`. The waveform preview displays the first 2 MB, 256 signal declarations and 100,000 value changes, stopping at the first limit. **Reveal VCD** locates the complete trace.
